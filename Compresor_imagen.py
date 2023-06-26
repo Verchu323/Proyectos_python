@@ -23,3 +23,7 @@ if __name__ == "__main__":
             videoFolder = "/Users/El Fresno/Videos/"
             os.rename(downLoadsFolder + filename, videoFolder + filename)
             
+        if extension in [".pdf"]:
+            pdfFolder = "/Users/El Fresno/Documents/"
+            os.rename(downLoadsFolder + filename, pdfFolder + filename)
+        
