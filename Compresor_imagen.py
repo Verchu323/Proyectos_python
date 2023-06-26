@@ -1,4 +1,4 @@
-from PIL import Image # python3 -m pip install Pillow
+from PIL import Image # python -m pip install Pillow
 
 import os
 
@@ -10,20 +10,21 @@ if __name__ == "__main__":
         name, extension = os.path.splitext(downLoadsFolder + filename)
         
         if extension in [".jpg", ".jpeg", ".png"]:
-            picture = Image.open(downLoadsFolder + filename)
-            picture.save(picturesFolder + "compressed_" + filename, optimize=True, quality=60) 
-            os.remove(downLoadsFolder + filename)
+            os.rename(downLoadsFolder + filename, picturesFolder + filename)
             print(name + ": " + extension)
             
         if extension in [".mp3"]:
             musicFolder = "/Users/El Fresno/Music/"
             os.rename(downLoadsFolder + filename, musicFolder + filename)
+            print(name + ": " + extension)
         
         if extension in [".mp4"]:
             videoFolder = "/Users/El Fresno/Videos/"
             os.rename(downLoadsFolder + filename, videoFolder + filename)
+            print(name + ": " + extension)
             
         if extension in [".pdf"]:
             pdfFolder = "/Users/El Fresno/Documents/"
             os.rename(downLoadsFolder + filename, pdfFolder + filename)
+            print(name + ": " + extension)
         
